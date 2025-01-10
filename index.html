@@ -1,37 +1,202 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Meine App-Webseite</title>
     <style>
-        body {
-          font-family: sans-serif;
-          margin: 2rem;
+        /* Grundlegendes Reset und Fonts */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
         }
+        body {
+          font-family: 'Arial', sans-serif;
+          background: #f8f9fa;
+          color: #333;
+          margin: 0;
+        }
+
+        header, nav, main, footer {
+          width: 100%;
+          max-width: 1000px;
+          margin: 0 auto;
+          padding: 1rem;
+        }
+
+        header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        header h1 {
+          font-size: 1.5rem;
+          font-weight: 700;
+        }
+
+        nav {
+          margin: 1.5rem 0;
+          display: flex;
+          gap: 1rem;
+        }
+
         nav a {
-          margin-right: 1rem;
+          text-decoration: none;
+          color: #007bff;
+          transition: color 0.3s ease;
+        }
+        nav a:hover {
+          color: #0056b3;
+        }
+
+        /* Hero-Bereich */
+        .hero {
+          background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+          padding: 3rem 1rem;
+          text-align: center;
+          border-radius: 0.5rem;
+          margin-bottom: 2rem;
+        }
+        .hero h2 {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+        }
+        .hero p {
+          font-size: 1rem;
+          max-width: 600px;
+          margin: 0 auto 2rem;
+          line-height: 1.5;
+        }
+        .hero a.cta-button {
+          display: inline-block;
+          text-decoration: none;
+          background: #007bff;
+          color: #fff;
+          padding: 0.75rem 1.25rem;
+          border-radius: 0.25rem;
+          font-weight: 600;
+          transition: background 0.3s ease;
+        }
+        .hero a.cta-button:hover {
+          background: #0056b3;
+        }
+
+        /* Hauptinhalt */
+        main {
+          background: #ffffff;
+          border-radius: 0.5rem;
+          padding: 2rem;
+          margin-bottom: 2rem;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        main p {
+          margin-bottom: 1rem;
+          line-height: 1.6;
+        }
+
+        hr {
+          border: none;
+          border-top: 1px solid #ddd;
+          margin: 2rem 0;
+        }
+
+        footer {
+          text-align: center;
+          color: #777;
+          font-size: 0.9rem;
+        }
+        footer a {
+          color: inherit;
+          text-decoration: underline;
+        }
+
+        /* Sektion für Play Store Badge */
+        .playstore-section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+          margin-top: 2rem;
+        }
+        .playstore-section img {
+          width: 200px; /* Größe des Badges anpassen */
+          height: auto;
+        }
+        .playstore-section a.badge-link {
+          text-decoration: none;
         }
     </style>
 </head>
 <body>
 
-<h1>Willkommen auf meiner App-Webseite</h1>
-<p>
-    Hier findest du alle nötigen rechtlichen Informationen zu meiner App.
-    Verwende das Menü, um zum <a href="impressum.html">Impressum</a> oder zur
-    <a href="datenschutz_de.html">Datenschutz­erklärung</a> zu gelangen.
-</p>
+<header>
+    <h1>Meine App-Webseite</h1>
+</header>
 
 <nav>
-    <a href="impressum.html">Impressum</a> |
+    <a href="impressum.html">Impressum</a>
     <a href="datenschutz_de.html">Datenschutz</a>
 </nav>
 
-<hr>
+<section class="hero">
+    <h2>Willkommen zu meiner App!</h2>
+    <p>
+        Entdecke alle Infos zu meiner neuen Anwendung, inklusive rechtlicher Hinweise.
+        Du kannst dir die App gerne kostenlos im Play Store herunterladen.
+    </p>
+    <!-- Call-to-Action Button -->
+    <a
+            class="cta-button"
+            href="https://play.google.com/store/apps/details?id=com.blaich.dominic.coloredlines&hl=gsw&pli=1"
+            target="_blank"
+            rel="noopener noreferrer"
+    >
+        App im Play Store ansehen
+    </a>
+</section>
 
-<p><strong>Hinweis:</strong> Für unsere In-App-Werbung wird ggf.
-    <a href="app-ads.txt">app-ads.txt</a> verwendet (nur relevant für Werbepartner).</p>
+<main>
+    <p>
+        Hier findest du alle nötigen rechtlichen Informationen zu meiner App.
+        Verwende das Menü oben, um zum
+        <a href="impressum.html">Impressum</a> oder zur
+        <a href="datenschutz_de.html">Datenschutzerklärung</a> zu gelangen.
+    </p>
+    <hr />
+    <p>
+        <strong>Hinweis:</strong> Für unsere In-App-Werbung wird ggf.
+        <a href="app-ads.txt" target="_blank" rel="noopener noreferrer">app-ads.txt</a> verwendet
+        (nur relevant für Werbepartner).
+    </p>
 
+    <!-- Playstore-Badge-Sektion -->
+    <section class="playstore-section">
+        <h3>Jetzt downloaden:</h3>
+        <a
+                class="badge-link"
+                href="https://play.google.com/store/apps/details?id=com.blaich.dominic.coloredlines&hl=gsw&pli=1"
+                target="_blank"
+                rel="noopener noreferrer"
+        >
+            <!-- Offizielles Google Play Badge (verfügbar in verschiedenen Varianten)
+                 Quelle: https://play.google.com/intl/en_us/badges/ -->
+            <img
+                    src="https://play.google.com/intl/en_us/badges/images/generic/de_badge_web_generic.png"
+                    alt="Jetzt bei Google Play herunterladen"
+            />
+        </a>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; <span id="year"></span> Deine App. Alle Rechte vorbehalten.</p>
+</footer>
+
+<script>
+    // Automatisch das Jahr im Footer aktualisieren
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
